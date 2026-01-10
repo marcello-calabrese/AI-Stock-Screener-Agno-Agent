@@ -2,6 +2,7 @@ from agno.agent import Agent
 from agno.tools.yfinance import YFinanceTools
 from agno.tools.tavily import TavilyTools
 from agno.models.openai import OpenAIChat
+
 from dotenv import load_dotenv
 from agents_instructions.fundamental_analysis_agent_instructions import FundamentalExpectedOutput, FundamentalInstructions
 
@@ -20,6 +21,7 @@ def fundamental_analysis_agent():
         name="Fundamental Analysis Agent",
         instructions= FundamentalInstructions,
         expected_output= FundamentalExpectedOutput,
+        add_datetime_to_context=True,
         markdown=True,
         )
     return agent

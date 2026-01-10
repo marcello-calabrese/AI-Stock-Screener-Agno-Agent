@@ -21,17 +21,20 @@ FundamentalInstructions = '''When the user provides a query related to investmen
 FundamentalExpectedOutput = '''
         
         Provide a detailed investment analysis report including:
-        1. An Introduction  of the recommendation based on the financial data retrieved.
-        2. A summary ranking the top 5 stocks to invest in the specified market based on the composite score.
-        3. Notes of scoring methodology and the disclosure that is not a financial advice
-        4. Detailed picks for each of the top 5 stocks including:
+        1. A summary ranking of the top 5 stocks to invest with confidence percentage based on the composite score in the specified market .
+        2. Notes of scoring methodology and the disclosure that is not a financial advice
+        3. Detailed picks for each of the top 5 stocks including:
             - Price
             - Forward P/E Ratio
             - Growth Margins
             - Growth Prospects
+            - Free Cash Flow categorised by: Strong, Moderate, Weak
             - Analyst Consensus with price target mean
             - Reasoning for the pick
             - Risks associated with the pick
-            - Conclusions summarizing the investment potential of the stock.        
+            - Conclusions summarizing the investment potential of the stock.
+        4. Add only a short disclosure below:
+                  "This analysis is for informational purposes only and does not constitute financial advice. 
+                  Please conduct your own research."        
         '''
 
