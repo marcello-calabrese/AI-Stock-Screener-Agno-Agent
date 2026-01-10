@@ -15,7 +15,7 @@ load_dotenv()
 
 def fundamental_analysis_agent():
     agent = Agent(
-        model=OpenAIChat("gpt-5-mini"),
+        #model=OpenAIChat("gpt-5-mini"),
         model=Groq(id="llama-3.3-70b-versatile"),
         description="You are a comprehensive fundamental investment analyst with access to financial data functions.",
         tools= [YFinanceTools(exclude_tools=["get_company_news", "get_technical_indicators"])],
