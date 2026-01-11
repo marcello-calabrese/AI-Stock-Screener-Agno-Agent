@@ -10,6 +10,7 @@ dependencies = [
     "openai>=2.14.0",
     "plotly>=6.5.1",
     "python-dotenv>=1.2.1",
+    "sqlalchemy>=2.0.45",
     "streamlit>=1.52.2",
     "tavily-python>=0.7.17",
     "yfinance>=1.0",
