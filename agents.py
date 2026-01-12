@@ -2,10 +2,7 @@ from agno.agent import Agent
 from agno.tools.yfinance import YFinanceTools
 from agno.tools.tavily import TavilyTools
 from agno.models.openai import OpenAIChat
-<<<<<<< HEAD
-=======
 from agno.db.sqlite import SqliteDb
->>>>>>> testing_free_models
 
 from dotenv import load_dotenv
 from agents_instructions.fundamental_analysis_agent_instructions import FundamentalExpectedOutput, FundamentalInstructions

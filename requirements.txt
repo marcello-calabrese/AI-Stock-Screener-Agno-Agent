@@ -5,8 +5,5 @@ python-dotenv
 tavily-python
 yfinance
 plotly
-<<<<<<< HEAD
-=======
 groq
 sqlalchemy
->>>>>>> testing_free_models
