@@ -53,7 +53,6 @@ def fundamental_analysis_agent():
 def news_sentiment_agent():
     return Agent(
         model=OpenAIChat("gpt-5-mini"),
-        #model=Groq(id="llama-3.3-70b-versatile"),
         name="News Sentiment Analysis Agent",
         role="You are a highly knowledgeable financial analyst specializing in news sentiment analysis for stocks.",
         description="You are an expert in analyzing news sentiment for stock market investments.",
