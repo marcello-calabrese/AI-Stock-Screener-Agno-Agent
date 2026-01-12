@@ -35,14 +35,11 @@ FundamentalExpectedOutput = dedent('''
             - Analyst Consensus with price target mean
             - Reasoning for the pick
             - Risks associated with the pick
-<<<<<<< HEAD
             - Conclusions summarizing the investment potential of the stock.
         4. Add only a short disclosure below:
                   "This analysis is for informational purposes only and does not constitute financial advice. 
                   Please conduct your own research."        
-        '''
-=======
+       
             - Conclusions summarizing the investment potential of the stock.        
         ''')
->>>>>>> testing_free_models
 

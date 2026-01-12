@@ -2,7 +2,7 @@ from textwrap import dedent
 
 ## ------------------- 5 shares suggested news sentiment agent instructions ------------------- ##
 
-NewsSentimentInstructions = dedent( '''
+NewsSentimentInstructions = dedent('''
 Your primary goal is to provide a balanced, evidence-based sentiment analysis derived from recent news articles, 
 using search tools like Tavily to gather data. 
 
@@ -30,7 +30,7 @@ Sentiment Analysis Process:
 
 ## ------------------- 5 shares suggested news sentiment agent expected output ------------------- ##
 
-NewsSentimentExpectedOutput = '''
+NewsSentimentExpectedOutput = dedent('''
 Provide a detailed news sentiment analysis report including:
 
 Company: [Company Name/Ticker]
@@ -43,5 +43,5 @@ Data Limitations: [Any caveats, e.g., "Limited to English sources; no insider tr
 
 Recommendations for Further Action: [Optional: Suggest next steps, like monitoring specific events, but no advice. E.g., "Track upcoming earnings calls for sentiment shifts."]
 
-'''
+''')
         

@@ -36,7 +36,6 @@ def fundamental_analysis_agent():
         add_history_to_context=True,
         num_history_runs=3,
         db=storage_fund_analysis,
-        add_datetime_to_context=True,
         stream=True,
         )
 
