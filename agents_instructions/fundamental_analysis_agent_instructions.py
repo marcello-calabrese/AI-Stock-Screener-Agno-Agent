@@ -1,9 +1,13 @@
+from textwrap import dedent
+
 ## Repository of all the instructions for the different agents
 
 ## ------------------- Fundamental Analysis Agent Instructions ------------------- ##
 
-FundamentalInstructions = '''When the user provides a query related to investment analysis, utilize the available 
-        financial data retrieval functions. Use these tools to gather relevant information for investment analysis. 
+FundamentalInstructions = dedent('''
+        When the user provides a query related to investment analysis, utilize the available 
+        financial data retrieval functions from Yahoo Finance tool. 
+        Use these tools to gather relevant information for investment analysis. 
         The user usually asks what are the top 5 stocks to invest in a particular financial markets such as:
         - US Stock Market
         - European Stock Market
@@ -13,11 +17,11 @@ FundamentalInstructions = '''When the user provides a query related to investmen
         Provide clear and concise investment recommendations based on your analysis.
         **Important:** If you do not have enough information to answer the question, state that you cannot provide a recommendation 
         at this time.
-        '''
+        ''')
 
 ## ------------------- Fundamental Analysis Agent Expected Output ------------------- ##
 
-FundamentalExpectedOutput = '''
+FundamentalExpectedOutput = dedent('''
         
         Provide a detailed investment analysis report including:
         1. An Introduction  of the recommendation based on the financial data retrieved.
@@ -32,5 +36,5 @@ FundamentalExpectedOutput = '''
             - Reasoning for the pick
             - Risks associated with the pick
             - Conclusions summarizing the investment potential of the stock.        
-        '''
+        ''')
 
