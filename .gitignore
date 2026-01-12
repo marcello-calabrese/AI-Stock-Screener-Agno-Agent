@@ -20,15 +20,8 @@ env/
 PRD.md
 
 # word files
-<<<<<<< HEAD
 examples_of_Teams_structures.docx
-=======
-*.docx
 
-# log files
-*.log
-
-# tmp folders
-tmp/
+#temp folders
 temp/
->>>>>>> testing_free_models
+tmp/
