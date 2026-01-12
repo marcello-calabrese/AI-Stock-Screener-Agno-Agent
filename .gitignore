@@ -21,3 +21,10 @@ PRD.md
 
 # word files
 *.docx
+
+# log files
+*.log
+
+# tmp folders
+tmp/
+temp/
