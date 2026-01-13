@@ -17,9 +17,16 @@ st.title("AI Stock Screener Agno Agent")
 st.markdown("""
 ## Welcome to the AI Stock Screener Agno Agent! This application leverages advanced AI capabilities to help you analyze and screen stocks effectively.
 """)
+# Add some spacing
+st.write("")
+st.write("")
+st.write("") 
+st.write("")
+ 
 
-with st.container():
-    st.image("assets/sphere.jpg", width=150)
-    st.header("Ready to find best stocks?")
+with st.container(vertical_alignment="top",horizontal_alignment="center"):
+    st.image("assets/sphere.jpg", width=300)
+    st.header(text_alignment="center", body="Ready to find best stocks?")
+   
 
 st.write("Chatbot interface coming soon...")
