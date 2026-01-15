@@ -29,14 +29,11 @@ def team_agent_coordinator():
         enable_agentic_state=True,
         num_team_history_runs=3,
         markdown=True,
-        retries=3,
-        delay_between_retries=2,
-        exponential_backoff=True,
-        cache_session=True,
         stream=True,
     )
 
 # Example usage
-prompt= input("Enter your investment analysis query: ")
-team_agent = team_agent_coordinator()
-response = team_agent.print_response(prompt)
+# team_agent = team_agent_coordinator()
+# prompt= input("Enter your investment analysis query: ")
+
+# response = team_agent.print_response(prompt)

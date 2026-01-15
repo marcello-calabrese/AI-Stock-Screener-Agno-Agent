@@ -36,7 +36,6 @@ def fundamental_analysis_agent():
         add_history_to_context=True,
         num_history_runs=3,
         db=storage_fund_analysis,
-        cache_session=True,
         stream=True,
         )
 
@@ -67,7 +66,6 @@ def news_sentiment_agent():
         db=storage_news_sentiment,
         add_datetime_to_context=True,
         stream=True,
-        cache_session=True,
         )
     
 # Example usage

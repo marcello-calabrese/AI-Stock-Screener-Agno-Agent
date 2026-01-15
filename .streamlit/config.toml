@@ -2,14 +2,13 @@
 base = "dark"
 
 # General color setup
-textColor = "#e2e8f0"
-primaryColor = "#0F1D41"
-backgroundColor = "#132452"
-secondaryBackgroundColor = "#0f172b"
+textColor = "#ffffff"
+primaryColor = "#4f6cb7"
+backgroundColor = "#4172f7"
+secondaryBackgroundColor = "#03081a"
 
 # Widgets
-showWidgetBorder = true
-borderColor = "#314158"
+
 
 # Dataframes
 dataframeHeaderBackgroundColor = "#1d293d"
