@@ -1,24 +1,24 @@
 [theme]
 base = "dark"
 
-# General color setup
-textColor = "#ffffff"
-primaryColor = "#4f6cb7"
-backgroundColor = "#4172f7"
-secondaryBackgroundColor = "#03081a"
-
-# Widgets
+# General color setup - Modern, high-contrast palette
+textColor = "#FAFAFA"
+primaryColor = "#00D9FF"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#1C1E26"
 
 
-# Dataframes
-dataframeHeaderBackgroundColor = "#1d293d"
 
-# Base text
-font = "'Nunito':https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-baseFontWeight = 300
-baseFontSize = 14
+# Dataframes - Better readability
+dataframeHeaderBackgroundColor = "#1C1E26"
 
-# Heading text
-headingFont = "Nunito"
-headingFontWeights = [300, 400, 400, 300, 300, 300]
-headingFontSizes = ["2.5rem", "1.5rem", "1rem"]
+# Base text - Optimal readability
+font = "sans-serif"
+baseFontWeight = 400
+baseFontSize = 16
+
+# Heading text - Clear hierarchy
+headingFont = "sans-serif"
+headingFontWeights = [700, 600, 500, 500, 400, 400]
+headingFontSizes = ["2.25rem", "1.75rem", "1.5rem", "1.25rem", "1.1rem", "1rem"]
+

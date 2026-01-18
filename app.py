@@ -1,5 +1,6 @@
 import streamlit as st
-from team import team_agent_coordinator
+from agents import ai_stock_analysis_agent
+from agno.agent import RunEvent
 
 from dotenv import load_dotenv
 
@@ -31,7 +32,7 @@ st.write("")
 st.write("")
    
 with st.container(horizontal_alignment="center", vertical_alignment="center"):# Example usage of the Team Agent Coordinator
-    team_agent = team_agent_coordinator()
+    
     st.title(text_alignment="center", body="Chat with the AI Stock Screener Agent")
     
 st.write("")
@@ -68,5 +69,40 @@ with st.container(horizontal_alignment="center", vertical_alignment="center"):
             with st.spinner("Generating response..."):
                 # Create a placeholder for the streaming response
                 message_placeholder = st.empty()
+                full_response = ""
+                try:
+                    # Stream the agent response
+                    stream = ai_stock_analysis_agent.run(
+                        prompt, 
+                        stream=True,
+                        session_id=st.session_state.session_id,
+                        user_id=st.session_state.user_id
+                    )
+                    
+                    # Process streaming chunks
+                    for chunk in stream:
+                        if chunk.event == RunEvent.run_content:
+                            full_response += chunk.content
+                            # Update placeholder with accumulated response
+                            message_placeholder.markdown(full_response + "▌")
+                    
+                    # Remove cursor and show final response
+                    message_placeholder.markdown(full_response)
+                    
+                    # Add assistant response to chat history
+                    st.session_state.messages.append({"role": "assistant", "content": full_response})
+                except Exception as e:
+                    st.error(f"An error occurred: {e}")
+                    
+    # Sidebar with session info
+    with st.sidebar:
+        st.markdown("# Session Information")
+        st.write(f"**Session ID:** {st.session_state.session_id}")
+        st.write(f"**User ID:** {st.session_state.user_id}")
+        st.write("This information helps maintain context and memory for your interactions with the AI Stock Screener Agent.")
+        
+        if st.button("Clear chat history"):
+            st.session_state.messages = []
+            st.rerun()
 
 
