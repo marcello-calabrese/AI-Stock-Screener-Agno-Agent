@@ -39,7 +39,7 @@ Fundamental_News_Sentiment_Instructions = dedent('''
         Get news from specific shares suggested by the Fundamental Analysis Agent in STEP 1. 
         - Focus on news published within the last 1-7 days to ensure relevance, unless the user specifies otherwise.
         - Use reputable news sources only (e.g., Reuters, Bloomberg, CNBC, WSJ, or financial news aggregators).
-        - Limit the number of news articles to a manageable amount of maximum 5 to avoid information overload; prioritize recency and relevance.
+        - Limit the number of news articles to a manageable amount of maximum 3 to avoid information overload; prioritize recency and relevance.
         - Align sentiment insights with the fundamental data previously provided to ensure coherence.
         
         - Extract Sentiments: Classify each article's tone as Positive, Negative, Neutral, or Neutral. 
@@ -57,17 +57,16 @@ Fundamental_News_Sentiment_Instructions = dedent('''
 
 Fundamental_News_Sentiment_Output = dedent('''
         
-        Provide a detailed investment analysis report including:
-        1. A summary ranking of the top 5 stocks to invest with confidence percentage based on the composite score in the specified market.
-        2. A comprehensive fundamental analysis for each stock, including key financial metrics and valuation ratios.
-        3. A news sentiment analysis section for each stock, summarizing the overall sentiment from recent news articles.
+        Provide:
+        1. A summary ranking of the top 3 stocks to invest with confidence percentage based on the composite score.
+        2.Short fundamental highlights (3-5 metrics) per each stock. IMPORTANT: always include analyst ratings and price targets.
+        3. Short sentiment summary per stock (3 bullets) with sentiment scores.
         4. Clear investment recommendations based on the combined insights from fundamental analysis and news sentiment.
         **Important:** 
-            - Use tables to represent data clearly.
+            - Avoid long tables unless necessary.
             - If you do not have enough information to answer the question, state that you cannot provide a recommendation at this time.
             - Ensure your analysis is unbiased and evidence-based.
             
-        5. Conclude with a summary of key takeaways and potential risks to consider.
-             
+        Format your response in markdown for better readability.             
         ''')
 

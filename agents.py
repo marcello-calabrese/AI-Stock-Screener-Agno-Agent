@@ -58,7 +58,7 @@ ai_stock_analysis_agent = Agent(
         markdown=True,
         enable_user_memories=True,
         add_history_to_context=True,
-        num_history_runs=3,
+        num_history_runs=1,
         db=storage_fund_analysis
         
 )
