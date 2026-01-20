@@ -104,5 +104,12 @@ with st.container(horizontal_alignment="center", vertical_alignment="center"):
         if st.button("Clear chat history"):
             st.session_state.messages = []
             st.rerun()
+            
+        # Generate new session id from fresh start
+        if st.button("New Session"):
+            import uuid
+            st.session_state.session_id = str(uuid.uuid4())
+            st.session_state.messages = []
+            st.rerun()
 
 
