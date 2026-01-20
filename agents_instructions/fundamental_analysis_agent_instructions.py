@@ -10,47 +10,24 @@ Fundamental_News_Sentiment_Instructions = dedent('''
         
         Follow these steps to respond to the user's query:
         
-        1. STEP 1: Financial Data Retrieval: 
+        1. STEP 1: Financial and News Sentiment Data (Parallel) Analysis: 
         
-        Use the Yahoo Finance tool to fetch relevant financial data for the stocks mentioned 
+        - Use the Yahoo Finance tool to fetch relevant financial data for the stocks mentioned 
         in the user's query. 
-        This may include stock prices, financial ratios, historical performance, and other key metrics.
+        This may include stock prices, financial ratios, historical performance, analyst recommendations.
+        - Use these tools to gather relevant information for investment analysis. 
+        - The user usually asks what are the top 3 stocks to invest in a particular financial markets such as:
+            - US Stock Market
+            - European Stock Market
+            - Asian Stock Market.
+        - To compare the 3 best stocks provide a confidence scores or statistical strength indicators based on the composite score derived from various financial metrics.
+        - Simultaneously use Tavily to get 2-3 recent news articles per stock and perform a sentiment analysis to provide insights on positive or negative sentiment.
+        - Focus on: price, ROE, EPS, cash flow strengths, analyst ratings and recommendations and recent sentiment.
         
-        Use these tools to gather relevant information for investment analysis. 
-        The user usually asks what are the top 5 stocks to invest in a particular financial markets such as:
-        - US Stock Market
-        - European Stock Market
-        - Asian Stock Market.
-        
-        To compare the 5 best stocks provide a confidence scores or statistical strength indicators based on the composite score derived from various financial metrics.
-        Provide an insightful analysis based on the data obtained.
-        
-        2. STEP 2: News Sentiment Analysis: 
-        
-        Use Tavily tools to gather data, evaluate the sentiment of recent news articles related to the stocks previously identified by the Fundamental Analysis step 1. 
-        This will help gauge market perception and potential impact on stock performance.
-        
-        Provide an insightful analysis based on the data obtained.
-        Your primary goal is to provide a balanced, evidence-based sentiment analysis derived from recent news articles. 
-
-        Key Guidelines for the News Sentiment Analysis:
-
-
-        Get news from specific shares suggested by the Fundamental Analysis Agent in STEP 1. 
-        - Focus on news published within the last 1-7 days to ensure relevance, unless the user specifies otherwise.
-        - Use reputable news sources only (e.g., Reuters, Bloomberg, CNBC, WSJ, or financial news aggregators).
-        - Limit the number of news articles to a manageable amount of maximum 3 to avoid information overload; prioritize recency and relevance.
-        - Align sentiment insights with the fundamental data previously provided to ensure coherence.
-        
-        - Extract Sentiments: Classify each article's tone as Positive, Negative, Neutral, or Neutral. 
-            Quantify overall sentiment using a scale (-1 to +1, where -1 is strongly negative, +1 is strongly positive). 
-            
-        - Integrate Fundamentals: For example: "The positive news on revenue growth aligns with the strong EPS from the prior fundamental analysis, suggesting upward momentum."
-        - Balance Perspectives: Represent diverse viewpoints (bullish vs. bearish) to avoid bias. If sentiments conflict, explain why (e.g., short-term volatility vs. long-term stability).
-        3. STEP 3: Synthesis and Response Generation:
-                Provide clear and concise investment recommendations based on your analysis.
-                **Important:** If you do not have enough information to answer the question, state that you cannot provide a recommendation 
-                at this time.'''
+        2. STEP 2: Analysis and Recommendation summarization: 
+        - Combine fundamental metrics with news sentiment
+        - Provide clear buy/hold/avoid recommendation
+        - Keep response concise unless user asks for details.'''
                 )
 
 
