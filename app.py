@@ -1,11 +1,31 @@
 import streamlit as st
-from agents import ai_stock_analysis_agent
+import uuid
 from agno.agent import RunEvent
-
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
+
+# Cache the agent (created only once, not on every rerun)
+@st.cache_resource
+def get_agent():
+    from agents import ai_stock_analysis_agent
+    return ai_stock_analysis_agent
+
+# Initialize session state efficiently
+def init_session_state():
+    defaults = {
+        "messages": [],
+        "session_id": str(uuid.uuid4()),
+        "user_id": "default_user"
+    }
+    for key, value in defaults.items():
+        if key not in st.session_state:
+            st.session_state[key] = value
+
+# Initialize
+init_session_state()
+agent = get_agent()
 
 ### Streamlit APP Header ###
 
@@ -25,7 +45,7 @@ st.write("")
  
 
 with st.container(vertical_alignment="top",horizontal_alignment="center"):
-    st.image("assets/sphere.jpg", width=300)
+    st.image("assets/sphere2.jpg", width=300)
     st.header(text_alignment="center", body="Ready to find best stocks?")
     
 st.write("")
@@ -38,18 +58,7 @@ with st.container(horizontal_alignment="center", vertical_alignment="center"):# 
 st.write("")
     
 with st.container(horizontal_alignment="center", vertical_alignment="center"):
-    # Initialize session state for agent response
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
 
-    # Initialize session_id for agent memory persistence
-    if "session_id" not in st.session_state:
-        import uuid
-        st.session_state.session_id = str(uuid.uuid4())
-
-    # Initialize user_id for memory scoping (can be customized per user)
-    if "user_id" not in st.session_state:
-        st.session_state.user_id = "default_user"
         
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
@@ -72,7 +81,7 @@ with st.container(horizontal_alignment="center", vertical_alignment="center"):
                 full_response = ""
                 try:
                     # Stream the agent response
-                    stream = ai_stock_analysis_agent.run(
+                    stream = agent.run(
                         prompt, 
                         stream=True,
                         session_id=st.session_state.session_id,
@@ -107,7 +116,7 @@ with st.container(horizontal_alignment="center", vertical_alignment="center"):
             
         # Generate new session id from fresh start
         if st.button("New Session"):
-            import uuid
+            
             st.session_state.session_id = str(uuid.uuid4())
             st.session_state.messages = []
             st.rerun()
