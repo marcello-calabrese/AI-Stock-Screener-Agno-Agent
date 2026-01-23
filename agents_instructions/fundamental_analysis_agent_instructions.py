@@ -44,6 +44,7 @@ Fundamental_News_Sentiment_Output = dedent('''
             - If you do not have enough information to answer the question, state that you cannot provide a recommendation at this time.
             - Ensure your analysis is unbiased and evidence-based.
             
-        Format your response in markdown for better readability.             
+        Format your response in markdown for better readability. 
+        Create a table summarizing the key metrics and sentiment scores for each stock.            
         ''')
 
