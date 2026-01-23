@@ -19,6 +19,9 @@ env/
 # PRD file
 PRD.md
 
+# .batch files
+*.bat
+
 # word files
 examples_of_Teams_structures.docx
 
