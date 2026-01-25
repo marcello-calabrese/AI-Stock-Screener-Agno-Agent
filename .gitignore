@@ -28,3 +28,9 @@ examples_of_Teams_structures.docx
 #temp folders
 temp/
 tmp/
+
+# .ico files
+*.ico
+
+# .lnk files
+*.lnk
