@@ -2,8 +2,10 @@ from agno.agent import Agent,  RunOutputEvent, RunEvent
 from agno.tools.yfinance import YFinanceTools
 from agno.tools.tavily import TavilyTools
 from agno.models.openai import OpenAIChat
-from agno.db.sqlite import SqliteDb
+#from agno.db.sqlite import SqliteDb
+from agno.db.mongo import MongoDb
 from typing import Iterator
+import os
 from dotenv import load_dotenv
 from agents_instructions.fundamental_analysis_agent_instructions import Fundamental_News_Sentiment_Instructions, Fundamental_News_Sentiment_Output
 
@@ -14,7 +16,12 @@ from agents_instructions.fundamental_analysis_agent_instructions import Fundamen
 load_dotenv()
 
 # Storage agent sessions in a SQLite DB
-storage_fund_analysis = SqliteDb(db_file="tmp/fund_analysis/agent_history.db")
+# storage_fund_analysis = SqliteDb(db_file="tmp/fund_analysis/agent_history.db")
+
+# Storage agent sessions in a MongoDB
+
+db_url = os.getenv("MONGO_DB_URL")
+db = MongoDb(db_url=db_url)
 
 
 ## ------------------- Fundamental Analysis and News Sentiment Single Agent ------------------- ##
@@ -59,7 +66,7 @@ ai_stock_analysis_agent = Agent(
         enable_user_memories=True,
         add_history_to_context=True,
         num_history_runs=1,
-        db=storage_fund_analysis
+        db=db,
         
 )
 
