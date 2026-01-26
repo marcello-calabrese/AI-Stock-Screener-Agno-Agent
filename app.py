@@ -4,7 +4,7 @@ from agno.agent import RunEvent
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv()
+#load_dotenv()
 
 # Cache the agent (created only once, not on every rerun)
 @st.cache_resource

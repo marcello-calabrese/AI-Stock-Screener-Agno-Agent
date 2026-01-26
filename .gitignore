@@ -34,3 +34,5 @@ tmp/
 
 # .lnk files
 *.lnk
+# secrets.toml files in case of using streamlit, the file is under .streamlit folder
+.streamlit/secrets.toml
