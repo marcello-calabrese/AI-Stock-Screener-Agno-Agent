@@ -17,7 +17,7 @@ import streamlit as st
 
 #openai_api_key = st.secrets["OPENAI_API_KEY"]
 tavily_api_key = st.secrets["TAVILY_API_KEY"]
-mongodb_uri = st.secrets["MONGO_DB_URL"]
+mongodb_uri = st.secrets["MONGO_DB_URL"] + "&tls=true&tlsAllowInvalidCertificates=true"
 
 # Storage agent sessions in a SQLite DB
 # storage_fund_analysis = SqliteDb(db_file="tmp/fund_analysis/agent_history.db")
