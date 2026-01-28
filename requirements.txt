@@ -1,10 +1,9 @@
 agno
 openai
 streamlit
-python-dotenv
 tavily-python
 yfinance
 sqlalchemy
 pymongo
-motor
+
 

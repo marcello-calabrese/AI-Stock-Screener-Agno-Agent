@@ -3,9 +3,6 @@ import uuid
 from agno.agent import RunEvent
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
-#load_dotenv()
-
 with st.sidebar:
         # Open AI API Key input
         st.markdown("# API Configuration")
@@ -17,9 +14,9 @@ with st.sidebar:
 
 # Cache the agent (created only once, not on every rerun)
 @st.cache_resource
-def get_agent(api_key: str):
+def get_agent(_api_key: str):
     from agents import ai_stock_analysis_agent
-    return ai_stock_analysis_agent(openai_api_key=api_key)
+    return ai_stock_analysis_agent(openai_api_key=_api_key)
 
 # Initialize session state efficiently
 def init_session_state():
