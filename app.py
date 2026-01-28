@@ -46,7 +46,7 @@ st.header("Welcome to the AI Stock Screener Agent! This application leverages ad
 # Add some spacing
 st.write("")
 st.subheader("The AI Stock Screener Agent combines fundamental analysis and news sentiment to help you make informed investment decisions.")
-st.warning("### Before you start, please ensure you have your OpenAI API Key ready. Enter it in the sidebar to unlock the full potential of the AI Stock Screener Agent.") 
+st.warning("Before you start, please ensure you have your OpenAI API Key ready. Enter it in the sidebar to unlock the full potential of the AI Stock Screener Agent.") 
 st.write("")
  
 
